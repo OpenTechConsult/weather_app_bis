@@ -1,0 +1,23 @@
+{
+  "name": "weather_app_bis",
+  "version": "1.0.0",
+  "description": "In this project we are creating an Asynchronous Non Blocking Node.js application. It means that the application will continue to do other things while waiting for a long run io process to complete.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OpenTechConsult/weather_app_bis.git"
+  },
+  "keywords": [],
+  "author": "Elom Atsou Agboka <opentech.consult@gmail.com> (https://github.com/OpenTechConsult)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OpenTechConsult/weather_app_bis/issues"
+  },
+  "homepage": "https://github.com/OpenTechConsult/weather_app_bis#readme",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}
