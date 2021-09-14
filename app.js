@@ -1,7 +1,9 @@
 const request = require('request')
 
-const url = 'http://api.weatherstack.com/current?access_key=83feab2a74815c77e3bc05ec4ddb999d&query=6.1375,1.2123&units=f'
+//const url = 'http://api.weatherstack.com/current?access_key=83feab2a74815c77e3bc05ec4ddb999d&query=6.1375,1.2123&units=f'
+
+const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1Ijoib3BlbnRlY2hjb25zdWx0IiwiYSI6ImNrdGozamRncTE3eHEyb2pvdTcyMTB3YTAifQ._G-Ff_bRHIW5AuuS1Miipg'
+
 request({url: url, json: true}, (err, response) => {
-    const currentWeatherData = response.body.current
-    console.log(`${currentWeatherData.weather_descriptions[0]}. It is currently ${currentWeatherData.temperature} degrees out. It feels like ${currentWeatherData.feelslike}.`)
+    console.log(`${response.body.query[0]} ${response.body.query[1]} is at longitude ${response.body.features[0].center[0]} and latitude ${response.body.features[0].center[1]}`)
 })
