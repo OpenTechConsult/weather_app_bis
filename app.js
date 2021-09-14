@@ -15,4 +15,3 @@ request({url: geocodeUrl, json: true}, (err, response) => {
     const [longitude, latitude] = response.body.features[0].center
     console.log(`${place_name} is at longitude ${longitude} and latitude ${latitude}`)
 })
-
