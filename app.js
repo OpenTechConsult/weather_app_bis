@@ -5,6 +5,8 @@ const weatherStackUrl = `http://api.weatherstack.com/current?access_key=83feab2a
 request({ url: weatherStackUrl, json: true}, (err, response) => {
     if (err) {
         console.log('Unable to connect to weather API')
+    } else if (response.body.error) {
+        console.log('Unable to find location!')
     } else {
         const temperature = response.body.current.temperature
         const feelsLike = response.body.current.feelslike
