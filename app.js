@@ -15,9 +15,9 @@ request({ url: weatherStackUrl, json: true}, (err, response) => {
     
 })
 
-const geocodeUrl = `https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1Ijoib3BlbnRlY2hjb25zdWx0IiwiYSI6ImNrdGozamRncTE3eHEyb2pvdTcyMTB3YTAifQ._G-Ff_bRHIW5AuuS1Miipg`
+const geoCodeUrl = `https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1Ijoib3BlbnRlY2hjb25zdWx0IiwiYSI6ImNrdGozamRncTE3eHEyb2pvdTcyMTB3YTAifQ._G-Ff_bRHIW5AuuS1Miipg`
 
-request({url: geocodeUrl, json: true}, (err, response) => {
+request({url: geoCodeUrl, json: true}, (err, response) => {
     if (err) {
         console.log('Unable to connect to mapbox geocode API')
     } else if (response.body.message) {
