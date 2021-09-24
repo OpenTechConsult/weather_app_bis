@@ -18,6 +18,10 @@
   },
   "homepage": "https://github.com/OpenTechConsult/weather_app_bis#readme",
   "dependencies": {
+    "express": "^4.16.4",
     "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
   }
 }
