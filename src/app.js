@@ -21,6 +21,12 @@ app.get('/about', (req, res) => {
     });
 });
 
+app.get('/help', (req, res) => {
+    res.render('help', {
+        message: 'Welcome to the Help Page.',
+    });
+});
+
 app.get('/weather', (req, res) => {
     res.send({
         location: { name: 'Gbadago', country: 'Togo'},
