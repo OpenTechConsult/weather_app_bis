@@ -8,7 +8,16 @@ app.set('view engine', 'hbs');
 app.use(express.static(publicDirectory));
 
 app.get('', (req, res) => {
-    res.render('index');
+    res.render('index', {
+        title: 'Weather Application',
+        name: 'Sandro Agboka',
+    });
+});
+
+app.get('/about', (req, res) => {
+    res.render('about', {
+
+    });
 });
 
 app.get('/weather', (req, res) => {
