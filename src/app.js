@@ -1,18 +1,25 @@
 const path = require('path');
 const express = require('express');
+const hbs = require('hbs');
+
+// load in an express app
 const app = express();
 
 // Define paths for Express config
 const publicDirectory = path.join(__dirname, '../public');
-const viewsPath = path.join(__dirname, '../templates');
+const viewsPath = path.join(__dirname, '../templates/views');
+const partialsPath = path.join(__dirname, '../templates/partials');
 
 // Setup handlebars and views location
 app.set('view engine', 'hbs');
 app.set('views', viewsPath);
+hbs.registerPartials(partialsPath)
 
 // Setup static directory to use
 app.use(express.static(publicDirectory));
 
+
+// define the different routes
 app.get('', (req, res) => {
     res.render('index', {
         title: 'Weather Application',
@@ -22,14 +29,16 @@ app.get('', (req, res) => {
 
 app.get('/about', (req, res) => {
     res.render('about', {
-        title: 'About',
+        title: 'About Page',
         name: 'Sandro Agboka',
     });
 });
 
 app.get('/help', (req, res) => {
     res.render('help', {
-        message: 'Welcome to the Help Page.',
+        message: 'Welcome to the Man Page.',
+        title: 'Help Page',
+        name: 'Sandro Agboka',
     });
 });
 
