@@ -50,11 +50,16 @@ app.get('/weather', (req, res) => {
 })
 
 app.get('/help/*', (req, res) => {
-    res.send('Help article not found');
+    res.render('error', {
+        message: 'Help article not found.'
+    });
 });
 
 app.get('*', (req, res) => {
-    res.send('My 404 page');
+    res.render('error', {
+        title: '404 Error Page',
+        message: 'The resource requested cannot be found on this server.'
+    });
 });
 
 app.listen(3000, () => {
