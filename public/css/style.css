@@ -1,7 +1,43 @@
-h1 {
-  color: green;
+body {
+  color: #333;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-img {
+header {
+  margin-top: 16px;
+  margin-bottom: 47px;
+}
+
+header a {
+  color: #888;
+  margin-right: 16px;
+  text-decoration: none;
+}
+
+footer {
+  color: #333;
+  background: #eeeeee;
+  padding: 5px 5px;
+  margin-top: 16px;
+  border-top: 1px solid #c1c0c0;
+}
+
+h1 {
+  font-size: 46px;
+  margin-bottom: 10px;
+}
+
+.main-content {
+  flex-grow: 1;
+}
+
+.portrait {
   width: 250px;
 }

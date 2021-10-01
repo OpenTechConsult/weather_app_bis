@@ -58,6 +58,7 @@ app.get('/help/*', (req, res) => {
 app.get('*', (req, res) => {
     res.render('error', {
         title: '404 Error Page',
+        name: 'Opentech Consult',
         message: 'The resource requested cannot be found on this server.'
     });
 });
