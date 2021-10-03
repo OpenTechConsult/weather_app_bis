@@ -2,6 +2,10 @@ const path = require('path');
 const express = require('express');
 const hbs = require('hbs');
 
+// require the geocode and the forecast module
+const geocode = require('./utils/geocode');
+const forecast = require('./utils/forecast');
+
 // load in an express app
 const app = express();
 
@@ -43,11 +47,34 @@ app.get('/help', (req, res) => {
 });
 
 app.get('/weather', (req, res) => {
-    res.send({
-        location: { name: 'Gbadago', country: 'Togo'},
-        current: { temperature: 88, humidity: 71}
+    if (!req.query.address) {
+        return res.send({
+            error: 'Please enter the address'
+        });
+    }
+
+    geocode(req.query.address, (error, {longitude, latitude, location} = {}) => {
+        if (error) {
+            return res.send({
+                error: error
+            });
+        }
+
+        forecast(longitude, latitude, (err, {temperature, feelslike}) => {
+            if (err) {
+                return res.send({
+                    err: err
+                });
+            }
+
+            res.send({
+                location: location,
+                temperature: temperature,
+                feelslike: feelslike
+            });
+        });
     });
-})
+});
 
 app.get('/help/*', (req, res) => {
     res.render('error', {
