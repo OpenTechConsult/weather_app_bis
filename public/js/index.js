@@ -13,4 +13,3 @@ weatherForm.addEventListener('submit', (e) => {
         .then(response => response.json())
         .then(responseData => console.log(responseData)).catch((error) => console.log('Error: ' + error));
 });
-
