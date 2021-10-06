@@ -6,14 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" href="/img/weather.png">
-    <script type="text/javascript" src="js/index.js"></script>
+    
     <title>Weather Application</title>
 </head>
 <body>
     <div class="main-content">
         {{>header}}
         <p>Use this site to get the weather data</p>
+        <form>
+            <input type="text" name="location" id="location" placeholder="Location">
+            <button>Search</button>
+        </form>
     </div>
     {{>footer}}
+<script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>
