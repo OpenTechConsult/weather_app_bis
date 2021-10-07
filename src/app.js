@@ -9,6 +9,9 @@ const forecast = require('./utils/forecast');
 // load in an express app
 const app = express();
 
+// define the port to user by the server
+const port = process.env.PORT || 3000;
+
 // Define paths for Express config
 const publicDirectory = path.join(__dirname, '../public');
 const viewsPath = path.join(__dirname, '../templates/views');
@@ -90,6 +93,6 @@ app.get('*', (req, res) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log('Server is up and listening on http://localhost:3000');
+app.listen(port, () => {
+    console.log(`Server is up and listening on http://localhost:${port}`);
 });
