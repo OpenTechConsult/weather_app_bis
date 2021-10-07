@@ -20,8 +20,7 @@ weatherForm.addEventListener('submit', (e) => {
                 if(data.error) {
                     messageOne.textContent = data.error;
                 } else {
-                    messageOne.textContent = data.location;
-                    messageTwo.textContent = data.temperature;
+                    messageOne.textContent = `Here in ${data.location}, the weather is ${data.description}. The temperature is ${data.temperature} but it feels like ${data.feelslike} and the humidity is ${data.humidity}`;
                 }
             });
         });
