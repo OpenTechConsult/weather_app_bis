@@ -4,7 +4,8 @@
   "description": "In this project we are creating an Asynchronous Non Blocking Node.js application. It means that the application will continue to do other things while waiting for a long run io process to complete.",
   "main": "app.js",
   "scripts": {
-    "start": "node src/app.js"
+    "start": "node src/app.js",
+    "test": "npm run test"
   },
   "repository": {
     "type": "git",
